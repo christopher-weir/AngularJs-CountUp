@@ -25,7 +25,11 @@ angular.module('angular-countup', []).
                         var startTime = value;
                         var currentTime = new Date().getTime();
                         var initialTime = currentTime - startTime;
-
+                        /**
+                         * Convert number in miliseconds to hh:mm:ss
+                         * @param {Number} _milsec
+                         * @return {Number} _s
+                         */
                         var convertTime = function( _milsec ){
 
                             var _sec = _milsec / 1000;
@@ -47,8 +51,8 @@ angular.module('angular-countup', []).
                             if( _s <= 9 ){
                                 _s = '0' + _s;
                             }
-
-                            return _h +':'+ _m +':'+ _s;
+                            var _r = _h +':'+ _m +':'+ _s;
+                            return _r;
                         };
                         // set initial time
                         scope.ilnTimeDifference = convertTime( initialTime );
