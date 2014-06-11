@@ -19,7 +19,7 @@ angular.module('angular-countup', []).
             link:   function ( scope, elm, attrs ) {
 
                 scope.$watch( attrs.startTime, function ( value ) {
-                    // let's do nothing if the value comes in empty, null or undefined
+                    // do nothing if the value comes in empty, null or undefined
                     if ((value !== null) && (value !== undefined) && (value !== '')) {
 
                         var startTime = value;
@@ -58,6 +58,7 @@ angular.module('angular-countup', []).
                         scope.ilnTimeDifference = convertTime( initialTime );
 
                         var timerCountup = $interval(function(){
+                            // count up the time by 1 sec
                             initialTime = initialTime + 1000;
                             scope.ilnTimeDifference = convertTime( initialTime );
                         }, 1000);
