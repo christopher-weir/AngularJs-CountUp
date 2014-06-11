@@ -1,8 +1,8 @@
 'use strict';
 
 /*
- *
- *
+ * Angular countup
+ * An angular countup directive to countup from a set time
  *
  *
  *
