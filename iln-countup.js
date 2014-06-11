@@ -8,8 +8,6 @@
  *
  */
 
-ApplicationConfiguration.registerModule('iln-countup');
-
 angular.module('iln-countup', []).
     directive('ilnCountup', [
         '$interval',
