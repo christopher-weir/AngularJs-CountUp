@@ -1,5 +1,3 @@
-'use strict';
-
 /*
  * Angular countup
  * An angular countup directive to countup from a set time
@@ -14,8 +12,12 @@ angular.module('angular-countup', []).
         function ( $interval ) {
         return {
             restrict: 'E',
-            replace: true,
-            template: '<div id="iln-countup">{{ ilnTimeDifference }}</div>',
+            template:
+                '<div id="iln-time-diff">'+
+                '<span id="iln-time-diff-hour">{{ hour }}</span>'+
+                '<span id="iln-time-diff-minute">{{ minute }}</span>'+
+                '<span id="iln-time-diff-second">{{ second }}</span>'+
+                '</div>',
             link:   function ( scope, elm, attrs ) {
 
                 scope.$watch( attrs.startTime, function ( value ) {
@@ -33,21 +35,18 @@ angular.module('angular-countup', []).
                         var convertTime = function( _milsec ){
 
                             var _sec = _milsec / 1000;
-                            var _h = 0;
-                            var _m = 0;
-                            var _s = 0;
 
-                            _h = Math.floor(((_sec % 31536000) % 86400) / 3600);
+                            var _h = Math.floor(((_sec % 31536000) % 86400) / 3600);
                             if( _h <= 9 ){
                                 _h = '0' + _h;
                             }
 
-                            _m = Math.floor((((_sec % 31536000) % 86400) % 3600) / 60);
+                            var _m = Math.floor((((_sec % 31536000) % 86400) % 3600) / 60);
                             if( _m <= 9 ){
                                 _m = '0' + _m;
                             }
 
-                            _s = Math.floor(((_sec % 31536000) % 86400) % 3600) % 60;
+                            var _s = Math.floor(((_sec % 31536000) % 86400) % 3600) % 60;
                             if( _s <= 9 ){
                                 _s = '0' + _s;
                             }
