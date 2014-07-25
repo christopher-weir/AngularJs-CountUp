@@ -1,3 +1,5 @@
 /config.codekit
 
 .DS_Store
+
+/src/angular-countup.js

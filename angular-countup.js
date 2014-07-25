@@ -1,4 +1,4 @@
-/*
+/**
  * Angular countup
  * An angular countup directive to countup from a set time
  *
@@ -14,10 +14,8 @@ angular.module('angular-countup', []).
             template:
                 '<div id="iln-time-diff">'+
                 '<span id="iln-time-diff-hour">{{ hour }}</span>'+
-
                 '<span id="iln-time-diff-minute">{{ minute }}</span>'+
                 '<span id="iln-time-diff-second">{{ second }}</span>'+
-
                 '</div>',
             link:   function ( scope, elm, attrs ) {
 
@@ -31,7 +29,7 @@ angular.module('angular-countup', []).
                         /**
                          * Convert number in miliseconds to hh:mm:ss
                          * @param {Number} _milsec
-                         * @return {Number} _s
+                         * @return {String} _r
                          */
                         var convertTime = function( _milsec ){
 
